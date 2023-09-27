@@ -1,0 +1,7 @@
+.icon-img{
+    max-width: 100px;
+}
+.selected-icon{
+    border: 5px solid black;
+    padding: 10px;
+}
