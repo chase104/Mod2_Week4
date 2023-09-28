@@ -1,6 +1,8 @@
 import { useState } from 'react';
 // import { uuidv4 as uuid } from 'uuidv4';
 import { v4 as uuidv4 } from 'uuid';
+import {Button, TextField} from '@mui/material';
+
 function MovieForm({setMovies}) {
     const [formData, setFormData] = useState({
         title: '',
@@ -56,10 +58,12 @@ function MovieForm({setMovies}) {
             return (
                 <div key={item}>
                     <label htmlFor={item}>{item}:</label>
-                    <input
+                    <TextField
                         type="text"
                         id={item}
                         name={item}
+                        variant="outlined"
+                        label="item"
                         value={formData[item]}
                         onChange={handleChange}
                     />
@@ -72,7 +76,7 @@ function MovieForm({setMovies}) {
         <form onSubmit={handleSubmit}>
             {divs}
             <div>
-                <button type="submit">Submit</button>
+                <Button variant="outlined" type="submit">Submit</Button>
             </div>
         </form>
     );
