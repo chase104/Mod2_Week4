@@ -46,7 +46,7 @@ function App() {
      ></div>
     {
       users.map((user) => {
-        return <div>{user.name}</div>
+        return <div key={user.name}>{user.name}</div>
       })
     }
     </>
