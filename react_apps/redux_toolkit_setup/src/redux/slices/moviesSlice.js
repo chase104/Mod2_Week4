@@ -1,17 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 // state right now is 57
+
 const moviesSlice = createSlice({
-    name: "counter",
-    initialState: 0,
+    name: "movies",
+    initialState: [], //starting state
     reducers: {
-        increment: (currentState) => currentState+1,
-        decrement: (currentState) => currentState-1,
-        reset: () => 0
-    
+        addMovie: (state, action) => {
+            console.log(action);
+            state.push(action.payload)
+        }
     }
-})
+});
 // export all reducers (named exports)
-export const { increment, decrement, reset } = counterSlice.actions;
+export const { addMovie } = moviesSlice.actions;
 // export default counterSlice.reducer
 export default moviesSlice.reducer;
 

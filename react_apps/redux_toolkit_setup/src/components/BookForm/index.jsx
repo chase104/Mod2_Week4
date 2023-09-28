@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addMovie } from '../../redux/slices/moviesSlice';
 
-function MovieForm({setBooks}) {
+function MovieForm() {
+
+    const dispatch = useDispatch()
     const [formData, setFormData] = useState({
         title: '',
         description: '',
@@ -20,12 +24,7 @@ function MovieForm({setBooks}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form data submitted:', formData);
-        setBooks((prev) => {
-            return {
-                ...prev,
-
-            }
-        })
+        dispatch(addMovie(formData))
     };
 
     return (
